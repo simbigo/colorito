@@ -1,0 +1,67 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace Simbigo\Colorito;
+
+use Imagick;
+
+/**
+ * Class BlendMode
+ */
+class BlendMode
+{
+    const MODE_ADD = Imagick::COMPOSITE_ADD;
+    const MODE_ATOP = Imagick::COMPOSITE_ATOP;
+    const MODE_BLEND = Imagick::COMPOSITE_BLEND;
+    const MODE_CLEAR = Imagick::COMPOSITE_CLEAR;
+    const MODE_COLORBURN = Imagick::COMPOSITE_COLORBURN;
+    const MODE_COLORDODGE = Imagick::COMPOSITE_COLORDODGE;
+    const MODE_COLORIZE = Imagick::COMPOSITE_COLORIZE;
+    const MODE_COPY = Imagick::COMPOSITE_COPY;
+    const MODE_COPYBLACK = Imagick::COMPOSITE_COPYBLACK;
+    const MODE_COPYBLUE = Imagick::COMPOSITE_COPYBLUE;
+    const MODE_COPYCYAN = Imagick::COMPOSITE_COPYCYAN;
+    const MODE_COPYGREEN = Imagick::COMPOSITE_COPYGREEN;
+    const MODE_COPYMAGENTA = Imagick::COMPOSITE_COPYMAGENTA;
+    const MODE_COPYOPACITY = Imagick::COMPOSITE_COPYOPACITY;
+    const MODE_COPYRED = Imagick::COMPOSITE_COPYRED;
+    const MODE_COPYYELLOW = Imagick::COMPOSITE_COPYYELLOW;
+    const MODE_DARKEN = Imagick::COMPOSITE_DARKEN;
+    const MODE_DEFAULT = Imagick::COMPOSITE_DEFAULT;
+    const MODE_DIFFERENCE = Imagick::COMPOSITE_DIFFERENCE;
+    const MODE_DISPLACE = Imagick::COMPOSITE_DISPLACE;
+    const MODE_DISSOLVE = Imagick::COMPOSITE_DISSOLVE;
+    const MODE_DST = Imagick::COMPOSITE_DST;
+    const MODE_DSTATOP = Imagick::COMPOSITE_DSTATOP;
+    const MODE_DSTIN = Imagick::COMPOSITE_DSTIN;
+    const MODE_DSTOUT = Imagick::COMPOSITE_DSTOUT;
+    const MODE_DSTOVER = Imagick::COMPOSITE_DSTOVER;
+    const MODE_EXCLUSION = Imagick::COMPOSITE_EXCLUSION;
+    const MODE_HARDLIGHT = Imagick::COMPOSITE_HARDLIGHT;
+    const MODE_HUE = Imagick::COMPOSITE_HUE;
+    const MODE_IN = Imagick::COMPOSITE_IN;
+    const MODE_LIGHTEN = Imagick::COMPOSITE_LIGHTEN;
+    const MODE_LUMINIZE = Imagick::COMPOSITE_LUMINIZE;
+    const MODE_MINUS = Imagick::COMPOSITE_MINUS;
+    const MODE_MODULATE = Imagick::COMPOSITE_MODULATE;
+    const MODE_MULTIPLY = Imagick::COMPOSITE_MULTIPLY;
+    const MODE_NO = Imagick::COMPOSITE_NO;
+    const MODE_OUT = Imagick::COMPOSITE_OUT;
+    const MODE_OVER = Imagick::COMPOSITE_OVER;
+    const MODE_OVERLAY = Imagick::COMPOSITE_OVERLAY;
+    const MODE_PLUS = Imagick::COMPOSITE_PLUS;
+    const MODE_REPLACE = Imagick::COMPOSITE_REPLACE;
+    const MODE_SATURATE = Imagick::COMPOSITE_SATURATE;
+    const MODE_SCREEN = Imagick::COMPOSITE_SCREEN;
+    const MODE_SOFTLIGHT = Imagick::COMPOSITE_SOFTLIGHT;
+    const MODE_SRC = Imagick::COMPOSITE_SRC;
+    const MODE_SRCATOP = Imagick::COMPOSITE_SRCATOP;
+    const MODE_SRCIN = Imagick::COMPOSITE_SRCIN;
+    const MODE_SRCOUT = Imagick::COMPOSITE_SRCOUT;
+    const MODE_SRCOVER = Imagick::COMPOSITE_SRCOVER;
+    const MODE_SUBTRACT = Imagick::COMPOSITE_SUBTRACT;
+    const MODE_THRESHOLD = Imagick::COMPOSITE_THRESHOLD;
+    const MODE_UNDEFINED = Imagick::COMPOSITE_UNDEFINED;
+    const MODE_XOR = Imagick::COMPOSITE_XOR;
+}
