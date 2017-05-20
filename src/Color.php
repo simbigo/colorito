@@ -720,4 +720,26 @@ class Color
     {
         return $this->value;
     }
+
+    /**
+     * Compare colors
+     *
+     * @param string $value
+     * @return bool
+     */
+    public function is(string $value): bool
+    {
+        return $this->getValue() === $value;
+    }
+
+    /**
+     * Compare colors
+     *
+     * @param Color $color
+     * @return bool
+     */
+    public function isEqual(Color $color): bool
+    {
+        return $this->is($color->getValue());
+    }
 }

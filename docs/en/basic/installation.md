@@ -22,8 +22,7 @@ composer require simbigo/colorito
 ```php
 use Simbigo\Colorito\Image\Image;
 
-// include composer autoload
-require 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 $image = Image::makeFromFile('source.jpg')->saveAs('result.png');
 ```
