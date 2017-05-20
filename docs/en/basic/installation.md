@@ -20,7 +20,7 @@ composer require simbigo/colorito
 ### Usage
 
 ```php
-use Simbigo\Imager\Image\Image;
+use Simbigo\Colorito\Image\Image;
 
 // include composer autoload
 require 'vendor/autoload.php';
