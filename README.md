@@ -194,3 +194,17 @@ $image->createLayerFromFile('tower.jpg');
 $image->transform(new Rotation(90));
 $image->saveAs('rotation_img.jpg');
 ```
+
+![village.jpg](docs/_assets/img/rotation_img.jpg)
+
+```php
+use Simbigo\Colorito\Image\Image;
+use Simbigo\Colorito\Transform\Rotation;
+
+$image = new Image();
+$image->createLayerFromFile('village.jpg');
+$image->createLayerFromFile('tower.jpg')->transform(new Rotation(90));
+$image->saveAs('rotation_layer.jpg');
+```
+
+![village.jpg](docs/_assets/img/rotation_layer.jpg)
