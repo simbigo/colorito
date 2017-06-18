@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Simbigo\Colorito\Image;
 
 use Imagick;
+use Simbigo\Colorito\BlendMode;
 
 /**
  * Class Layer
@@ -14,7 +15,7 @@ class Layer extends AbstractCanvas implements LayerInterface
     /**
      * @var int
      */
-    private $blendMode = -1;
+    private $blendMode = BlendMode::MODE_DEFAULT;
     /**
      * @var ImageInterface parent image instance
      */
