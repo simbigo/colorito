@@ -24,7 +24,7 @@ PHP image manipulation library. The library based on ImageMagick tools (Imagick 
 
 ## Introduction
 
-#### What is Colorito?
+### What is Colorito?
 
 Colorito is an open source PHP image manipulation library. The library is based on ImageMagick tools. It provides an easier way to create, edit and compose images. It can read and write images in a variety of formats (over 200) including PNG, JPEG, JPEG-2000, GIF, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use Colorito to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
 
@@ -33,7 +33,7 @@ Colorito is an great image-to-image converter. It can convert an image in just a
 The library follows the FIG guidelines, so it can be integrated easily to an existing project. 
 
 
-#### About examples of Colorito usage
+### About examples of Colorito usage
 
 Many examples and descriptions were taken from the ImageMagick documentation and were adapted to use in PHP. So if you were viewing the original documentation, you will meet a lot of familiar words.
 
@@ -45,14 +45,14 @@ I generally use the JPEG formats for images, but in many examples, I use an imag
 
 ## Installation
 
-#### System requirements
+### System requirements
 
 Colorito requires the following components to work correctly: 
 
  * PHP >= 7.0
  * Imagick PHP extension
  
-#### Composer Installation
+### Composer Installation
 
 The best way to install Colorito is quickly with [Composer](http://getcomposer.org/). 
 
@@ -62,7 +62,7 @@ To install the most recent version, run the following command:
 composer require simbigo/colorito
 ```
 
-#### Usage
+### Usage
 
 ```php
 use Simbigo\Colorito\Image\Image;
@@ -74,7 +74,7 @@ $image = Image::makeFromFile('source.jpg')->saveAs('result.png');
 
 ## Quick start
 
-#### Load images
+### Load images
 
 The simple way to load a image is call static method ```makeFromFile()```:
 
@@ -84,7 +84,7 @@ use Simbigo\Colorito\Image\Image;
 $image = Image::makeFromFile('path/to/source.jpg');
 ```
 
-#### Conversion of format
+### Conversion of format
 
 If you want change format of the source image, just save it with necessary extension:
 
@@ -104,7 +104,7 @@ Each creation or modification operation makes on the Image object. This object i
 In the "Quick Start" section, you could see that we loaded the image using the ```Image::makeFromFile()``` method. If you look behind the scenes, it becomes clear that this method is only an shortcut, and the original image was loaded as the first layer of the Image object.
 
 
-#### Layer creation
+### Layer creation
 
 There are several ways to add new layers to an image.
 
@@ -139,7 +139,7 @@ $image->addLayer($layer);
 ```
 
 
-#### Access to layers
+### Access to layers
 
 ```php
 use Simbigo\Colorito\Image\Image;
@@ -177,7 +177,7 @@ foreach ($layers as $layer) {
 ```
 
 
-#### Editing
+### Editing
 
 Below you can see examples of the transformation applied to different objects. In the first case, we rotate the entire image, and in the second only a separate layer.
 
