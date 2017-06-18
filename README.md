@@ -208,3 +208,61 @@ $image->saveAs('rotation_layer.jpg');
 ```
 
 ![village.jpg](docs/_assets/img/rotation_layer.jpg)
+
+
+
+## Solid color canvases
+
+When you create a image you are getting Image object. It doesn't have some layers. If you don't have a plan to save an empty image, you need to create a new layer and to make all manipulations with it. See "Layers" section for more information. 
+
+1. Using Image::setBackground() method.
+
+```php
+use Simbigo\Colorito\Color\Color;
+use Simbigo\Colorito\Image\Image;
+
+$image = new Image();
+$image->setBackground(Color::LIGHT_GREEN);
+$image->createLayer(500, 50);
+$image->saveAs('solid_green.jpg');
+```
+
+![solid.jpg](docs/_assets/img/solid_green.jpg)
+
+2. Set background on create the layer.
+
+```php
+use Simbigo\Colorito\Color\Color;
+use Simbigo\Colorito\Image\Image;
+
+$image = new Image();
+$image->createLayer(500, 50, new Color(Color::LIGHT_BLUE));
+$image->saveAs('solid_blue.jpg');
+```
+
+![solid.jpg](docs/_assets/img/solid_blue.jpg)
+
+3. Use Fill effect.
+
+```php
+use Simbigo\Colorito\Color;
+use Simbigo\Colorito\Effects\Generate\Fill;
+use Simbigo\Colorito\Image\Image;
+
+$fill = new Fill(new Color('gold'));
+
+$image = new Image();
+$image->createLayer(500, 50)->effect($fill);
+$image->saveAs('solid_gold.jpg');
+```
+
+![solid.jpg](docs/_assets/img/solid_gold.jpg)
+
+## Effects
+
+### Generate
+
+#### Fill
+
+The Fill effect fills specified masks with a specified color.
+
