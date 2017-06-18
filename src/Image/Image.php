@@ -105,7 +105,7 @@ class Image extends AbstractCanvas implements ImageInterface
 
         /** @var LayerInterface $layer */
         $layer = new $this->layerClass;
-        $layer->makeImage()->newImage($width, $height, $background);
+        $layer->makeImage()->newImage($width, $height, $background->getValue());
         $this->addLayer($layer);
         return $layer;
     }
