@@ -7,8 +7,8 @@ PHP image manipulation library. The library based on ImageMagick tools (Imagick 
    * [Installation](#installation)
    * [Quick start](#quick-start)
    * [Layers](#layers)
- * Canvas creation
-   * Solid color canvases
+ * [Canvas creation](#canvas-creation)
+   * [Solid color canvases](#solid-color-canvases)
    * Gradients of color
  * Color basics and channels
    * @todo
@@ -20,6 +20,9 @@ PHP image manipulation library. The library based on ImageMagick tools (Imagick 
    * Flop
    * Opacity
    * Rotation
+ * [Effects](#effects)
+   * [Generate](#generate)
+     * [Fill](#fill)
 
 
 ## Introduction
@@ -266,3 +269,14 @@ $image->saveAs('solid_gold.jpg');
 
 The Fill effect fills specified masks with a specified color.
 
+```php
+use Simbigo\Colorito\Color;
+use Simbigo\Colorito\Effects\Generate\Fill;
+use Simbigo\Colorito\Image\Image;
+
+$fill = new Fill(new Color('orange'));
+Image::makeFromFile('village.jpg')->effect($fill)->saveAs('fill.jpg');
+```
+
+![village.jpg](docs/_assets/img/village.jpg)
+![fill.jpg](docs/_assets/img/fill.jpg)
