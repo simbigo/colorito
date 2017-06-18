@@ -46,7 +46,7 @@ class Fill implements EffectInterface
         $draw->setFillColor(new ImagickPixel($this->color->getValue()));
 
         if ($this->opacity < 1) {
-            $draw->setFillAlpha($this->opacity);
+            $draw->setFillOpacity($this->opacity);
         }
 
         $geometry = $canvas->getImageGeometry();

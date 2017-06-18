@@ -274,7 +274,7 @@ use Simbigo\Colorito\Color;
 use Simbigo\Colorito\Effects\Generate\Fill;
 use Simbigo\Colorito\Image\Image;
 
-$fill = new Fill(new Color('orange'));
+$fill = new Fill(new Color('orange'), 0.5);
 Image::makeFromFile('village.jpg')->effect($fill)->saveAs('fill.jpg');
 ```
 
