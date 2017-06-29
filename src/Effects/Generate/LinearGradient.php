@@ -28,7 +28,7 @@ class LinearGradient implements EffectInterface
      * @param Color $startColor
      * @param Color $endColor
      */
-    public function __construct(Color $startColor, Color $endColor)
+    public function __construct(Color $startColor = null, Color $endColor = null)
     {
         $this->setStartColor($startColor);
         $this->setEndColor($endColor);
@@ -43,7 +43,13 @@ class LinearGradient implements EffectInterface
         $geometry = $canvas->getImageGeometry();
         $width = $geometry['width'];
         $height = $geometry['height'];
-        $colors = [$this->startColor->getValue(), $this->endColor->getValue()];
+        $colors = [];
+        if ($this->startColor !== null) {
+            $colors[] = $this->startColor->getValue();
+        }
+        if ($this->endColor !== null) {
+            $colors[] = $this->endColor->getValue();
+        }
         $canvas->newPseudoImage($width, $height, 'gradient:' . implode('-', $colors));
     }
 
@@ -74,7 +80,7 @@ class LinearGradient implements EffectInterface
     /**
      * @param Color $startColor
      */
-    public function setStartColor(Color $startColor)
+    public function setStartColor(Color $startColor = null)
     {
         $this->startColor = $startColor;
     }

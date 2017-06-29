@@ -22,7 +22,7 @@ class Fill implements EffectInterface
     /**
      * @var float value between 0 and 1
      */
-    private $opacity = 1;
+    private $opacity = 1.0;
 
     /**
      * Fill constructor.
@@ -92,10 +92,10 @@ class Fill implements EffectInterface
     {
         $opacity = (float)$opacity;
         if ($opacity > 1) {
-            $opacity = 1;
+            $opacity = 1.0;
         }
         if ($opacity < 0) {
-            $opacity = 0;
+            $opacity = 0.0;
         }
 
         $this->opacity = $opacity;
