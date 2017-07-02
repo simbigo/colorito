@@ -46,4 +46,12 @@ interface ImageInterface extends CanvasInterface
      * @return bool
      */
     public function hasLayer(int $index): bool;
+
+    /**
+     * Save a final image
+     *
+     * @param string $destinationPath
+     * @return bool
+     */
+    public function saveAs(string $destinationPath): bool;
 }
