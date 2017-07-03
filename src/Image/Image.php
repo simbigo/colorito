@@ -268,6 +268,9 @@ class Image extends AbstractCanvas implements ImageInterface
         return $this;
     }
 
+    /**
+     * @param LayerFactoryInterface $factory
+     */
     public function setLayerFactory(LayerFactoryInterface $factory)
     {
         $this->layerFactory = $factory;
