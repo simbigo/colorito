@@ -8,6 +8,8 @@ use Imagick;
 use Simbigo\Colorito\Color;
 use Simbigo\Colorito\Exceptions\EmptyCanvasException;
 use Simbigo\Colorito\Exceptions\RangeException;
+use Simbigo\Colorito\Image\Factory\LayerFactory;
+use Simbigo\Colorito\Image\Factory\LayerFactoryInterface;
 
 /**
  * Class Image
@@ -21,13 +23,13 @@ class Image extends AbstractCanvas implements ImageInterface
      */
     private $background;
     /**
+     * @var LayerFactoryInterface
+     */
+    private $layerFactory;
+    /**
      * @var LayerInterface[]
      */
     protected $layers = [];
-    /**
-     * @var string
-     */
-    public $layerClass = Layer::class;
 
     /**
      * Create a new Image instance and import an image as a layer
@@ -48,6 +50,7 @@ class Image extends AbstractCanvas implements ImageInterface
     public function __construct()
     {
         $this->setBackground(new Color(Color::TRANSPARENT));
+        $this->setLayerFactory(new LayerFactory());
     }
 
     /**
@@ -103,8 +106,7 @@ class Image extends AbstractCanvas implements ImageInterface
             $background = new Color(Color::TRANSPARENT);
         }
 
-        /** @var LayerInterface $layer */
-        $layer = new $this->layerClass;
+        $layer = $this->getLayerFactory()->instanceLayer();
         $layer->makeImage()->newImage($width, $height, $background->getValue());
         $this->addLayer($layer);
         return $layer;
@@ -118,8 +120,7 @@ class Image extends AbstractCanvas implements ImageInterface
      */
     public function createLayerFromFile(string $fileName): LayerInterface
     {
-        /** @var LayerInterface $layer */
-        $layer = new $this->layerClass;
+        $layer = $this->getLayerFactory()->instanceLayer();
         $layer->loadFile($fileName);
         $this->addLayer($layer);
         return $layer;
@@ -171,6 +172,14 @@ class Image extends AbstractCanvas implements ImageInterface
             throw new RangeException($index);
         }
         return $this->layers[$index];
+    }
+
+    /**
+     * @return LayerFactoryInterface
+     */
+    public function getLayerFactory(): LayerFactoryInterface
+    {
+        return $this->layerFactory;
     }
 
     /**
@@ -257,5 +266,10 @@ class Image extends AbstractCanvas implements ImageInterface
     {
         $this->background = $background;
         return $this;
+    }
+
+    public function setLayerFactory(LayerFactoryInterface $factory)
+    {
+        $this->layerFactory = $factory;
     }
 }
